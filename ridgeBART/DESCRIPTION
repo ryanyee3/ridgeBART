@@ -1,0 +1,11 @@
+Package: ridgeBART
+Type: Package
+Title: Bayeisan Additive Regression Trees with Ridge Function Outputs
+Version: 1.0.0
+Date: 2024-10-15
+Author: Ryan Yee and Sameer K. Deshpande
+Maintainer: Questions and comments to <ryan.yee@wisc.edu>
+Description: An implementation of Bayesian Additive Regression Trees (BART) with ridge function outputs for efficient smoothing. For more information, see Yee, Ghosh, and Deshpande.
+License: GPL (>= 3)
+LinkingTo: Rcpp, RcppArmadillo
+Imports: Rcpp

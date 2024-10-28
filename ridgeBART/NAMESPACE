@@ -1,0 +1,5 @@
+export("ridgeBART")
+export("predict_ridgeBART")
+export("probit_ridgeBART")
+importFrom(Rcpp, evalCpp)
+useDynLib(ridgeBART)
