@@ -48,7 +48,7 @@ if (hypers$model == "ridgeBART"){
     n_bases = hypers$n_bases,
     activation = hypers$act_opt,
     n_chains = hypers$n_chains,
-    nd = hypers$nd, burn = hypers$nd
+    nd = hypers$nd, burn = hypers$burn
   )
 } else if (hypers$model == "wbart"){
   fit = wbart_wrapper(
@@ -56,7 +56,7 @@ if (hypers$model == "ridgeBART"){
     X_train_df = std_X_cont_train,
     X_test_df = std_X_cont_test,
     n_chains = hypers$n_chains,
-    nd = hypers$nd, burn = hypers$nd
+    nd = hypers$nd, burn = hypers$burn
   )
 } else if (hypers$model == "softbart"){
   fit = softBART_wrapper(
@@ -64,7 +64,7 @@ if (hypers$model == "ridgeBART"){
     X_train = std_X_cont_train,
     X_test = std_X_cont_test,
     n_chains = hypers$n_chains,
-    nd = hypers$nd, burn = hypers$nd
+    nd = hypers$nd, burn = hypers$burn
   )
 } else if (hypers$model == "flexBART"){
   fit = flexBART_wrapper(
@@ -72,7 +72,7 @@ if (hypers$model == "ridgeBART"){
     X_cont_train = std_X_cont_train,
     X_cont_test = std_X_cont_test,
     n_chains = hypers$n_chains,
-    nd = hypers$nd, burn = hypers$nd
+    nd = hypers$nd, burn = hypers$burn
   )
 } else if (hypers$model == "gpbart"){
   fit = gpbart_wrapper(
@@ -80,7 +80,7 @@ if (hypers$model == "ridgeBART"){
     X_train_df = as.data.frame(std_X_cont_train),
     X_test_df = as.data.frame(std_X_cont_test),
     n_chains = hypers$n_chains,
-    nd = hypers$nd, burn = hypers$nd
+    nd = hypers$nd, burn = hypers$burn
   )
 }
 

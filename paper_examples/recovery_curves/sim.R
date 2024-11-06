@@ -9,7 +9,7 @@ study = "recovery_curves"
 source(paste0(dir, "ridgeBART_wrapper.R"))
 source(paste0(dir, "wbart_wrapper.R"))
 source(paste0(dir, "softBART_wrapper.R"))
-
+source(paste0(dir, "gpbart_wrapper.R"))
 
 # hyperparameters
 # args = commandArgs(TRUE)
@@ -68,6 +68,13 @@ if (hypers$model == "ridgeBART"){
     Y_train = Y_train,
     X_train = X_train_df,
     X_test = X_test_df,
+    n_chains = hypers$n_chains
+  )
+} else if (hypers$model == "gpbart"){
+  fit = gpbart_wrapper(
+    Y_train = Y_train,
+    X_train_df = as.data.frame(std_X_cont_train),
+    X_test_df = as.data.frame(std_X_cont_test),
     n_chains = hypers$n_chains
   )
 }

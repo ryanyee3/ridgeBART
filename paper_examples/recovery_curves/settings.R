@@ -55,7 +55,7 @@ ridge_new = expand.grid(
 )
 
 comps_old = expand.grid(
-  model = c("wbart", "softbart"),
+  model = c("wbart", "softbart", "gpbart"),
   test = "old",
   replicate = replicate,
   n_ind = n_ind,
@@ -71,7 +71,7 @@ comps_old = expand.grid(
 )
 
 comps_new = expand.grid(
-  model = c("wbart", "softbart"),
+  model = c("wbart", "softbart", "gpbart"),
   test = "new",
   replicate = replicate,
   n_ind = n_ind,
