@@ -1,5 +1,4 @@
 # Author: Ryan Yee
-# Date: October 9, 2024
 # Purpose: generate data for Friedman study
 # Details: 
 # Dependencies: scales

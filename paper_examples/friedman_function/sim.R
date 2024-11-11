@@ -3,7 +3,7 @@
 # Details: 
 # Dependencies: ridgeBART, BART, SoftBart, MLmetrics
 
-dir = "friedman_function/"
+dir = ""
 study = "friedman_function"
 
 source(paste0(dir, "ridgeBART_wrapper.R"))

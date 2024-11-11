@@ -3,7 +3,7 @@
 # Details: 
 # Dependencies: ridgeBART, BART, SoftBart
 
-dir = "recovery_curves/"
+dir = ""
 study = "recovery_curves"
 
 source(paste0(dir, "ridgeBART_wrapper.R"))

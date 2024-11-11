@@ -1,5 +1,4 @@
 # Author: Ryan Yee
-# Date: October 9, 2024
 # Purpose: settings for Friedman study
 # Details: 
 # Dependencies: scales
@@ -37,7 +36,7 @@ ridge = expand.grid(
 )
 
 comps = expand.grid(
-  model = c("wbart", "softbart", "gpbart", "flexBART"),
+  model = c("wbart", "softbart"),
   n = n,
   p = p,
   tau = tau,
@@ -51,4 +50,19 @@ comps = expand.grid(
   burn = burn
 )
 
-settings = rbind(ridge, comps)
+gp = expand.grid(
+  model = "gpbart",
+  n = 500,
+  p = p,
+  tau = tau,
+  n_folds = n_folds,
+  test_fold = test_fold,
+  n_trees = 0,
+  n_bases = 0,
+  act_opt = NA,
+  n_chains = n_chains,
+  nd = nd,
+  burn = burn
+)
+
+settings = rbind(ridge, comps, gp)
