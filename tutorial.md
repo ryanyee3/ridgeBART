@@ -26,16 +26,16 @@ sigma = 1
 
 # generate data
 set.seed(2024)
-X = matrix(unif(n = n * p), nrow = n, ncol = p)
+X = matrix(runif(n = n * p, min = -1, max = 1), nrow = n, ncol = p)
 mu = f(X)
 Y = mu + rnorm(n, mean = 0, sd = sigma)
 
 # train / test split
 folds = 10
 test_fold = sample(1:n, size = n / folds, replace = FALSE)
-X_train = X[!test_fold,]
-mu_train = mu[!test_fold]
-Y_train = mu[!test_fold]
+X_train = X[-test_fold,]
+mu_train = mu[-test_fold]
+Y_train = mu[-test_fold]
 X_test = X[test_fold,]
 mu_test = mu[test_fold]
 Y_test = mu[test_fold]
@@ -50,7 +50,7 @@ Now we are ready to run both `ridgeBART::ridgeBART()` and `BART::wbart()`.
 Note that we have hidden the printed output.
 
 ```r
-bart_time = system_time(
+bart_time = system.time(
   bart_fit <- BART::wbart(
     x.train = X_train,
     y.train = Y_train,
@@ -69,19 +69,19 @@ This will results in a function recovery which is piecewise smooth.
 We will use a ReLU activation, which worked the best in our experiments.
 
 ```r
-ridge_time = system_time(
+ridge_time = system.time(
   ridge_fit <- ridgeBART::ridgeBART( 
     Y_train = Y_train,
     X_cont_train = X_train,
     Z_mat_train = X_train,
-    X_test = X_test,
+    X_cont_test = X_test,
     Z_mat_test = X_test,
     activation = "ReLU"
   )
 )
-rmse_train["BART"] = sqrt(mean( (mu_train - ridge_fit$yhat.train.mean)^2 ))
-rmse_test["BART"] = sqrt(mean( (mu_test - ridge_fit$yhat.test.mean)^2 ))
-timing["BART"] = ridge_time["elapsed"]
+rmse_train["ridgeBART"] = sqrt(mean( (mu_train - ridge_fit$yhat.train.mean)^2 ))
+rmse_test["ridgeBART"] = sqrt(mean( (mu_test - ridge_fit$yhat.test.mean)^2 ))
+timing["ridgeBART"] = ridge_time["elapsed"]
 ```
 
 ```r
