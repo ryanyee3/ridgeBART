@@ -208,6 +208,7 @@ arma::vec draw_rho(std::vector<std::map<double,int>> &sampled_rhos, int &leaf_co
     return *tree_pi.rho_prior;
   } else {
     // draw from DP
+    double output;
     arma::vec rho(di.p_smooth);
     for (int i = 0; i < di.p_smooth; ++i){
       // draw from base measure with probability alpha / (alpha + leaf_count)
@@ -226,7 +227,6 @@ arma::vec draw_rho(std::vector<std::map<double,int>> &sampled_rhos, int &leaf_co
     } else {
         int index = ceil(gen.uniform() * leaf_count);
         int counter = 0;
-        double output;
         for (std::map<double,int>::iterator it = sampled_rhos[i].begin(); it != sampled_rhos[i].end(); ++it){
           counter += it->second;
           if (counter >= index){

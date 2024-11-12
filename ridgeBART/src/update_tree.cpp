@@ -168,7 +168,7 @@ void grow_tree(tree &t, suff_stat &ss_train, suff_stat &ss_test, rho_diag_t &rho
   double q_grow_old = tree_pi.prob_b; // transition prob. of growing old tree into new tree
   double q_prune_new = 1.0 - tree_pi.prob_b; // transition prob. of pruning new true into old tree
   
-  int nleaf_old = t.get_nbots(); // number of leaves in old tree
+  // int nleaf_old = t.get_nbots(); // number of leaves in old tree
   int nnog_old = t.get_nnogs(); // number of nodes in old tree with no grandchildren (nog node)
   int nnog_new = nnog_old; // number of nodes in new tree with no grandchildren
   

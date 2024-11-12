@@ -110,7 +110,7 @@ Rcpp::List probit_ridgeBART_fit(
   
   // declare stuff for variable selection
   std::vector<double> theta(p_split, 1.0/ (double) p_split);
-  double u = 1.0/(1.0 + (double) p_split);
+  // double u = 1.0/(1.0 + (double) p_split);
   std::vector<int> var_count(p_split, 0); // count how many times a variable has been used in a splitting rule
   int rule_count = 0; // how many total decision rules are there in the ensemble
   
@@ -183,7 +183,7 @@ Rcpp::List probit_ridgeBART_fit(
   rho_diag_t rho_diag;
 
   tree::npv bnv; // for checking that our ss map and our trees are not totally and utterly out of sync
-  double tmp_mu; // for holding the value of mu when we're doing the backfitting
+  // double tmp_mu; // for holding the value of mu when we're doing the backfitting
   int nid; // for holding the node id of where a changed was made used for writing to change log
   int change_type; // for encoding the type of update we've proposed
   int save_iter; // for keeping track of the save iteration we are on
