@@ -1,7 +1,7 @@
 Package: ridgeBART
 Type: Package
 Title: Bayeisan Additive Regression Trees with Ridge Function Outputs
-Version: 1.0.0
+Version: 1.0.2
 Date: 2024-10-15
 Author: Ryan Yee and Sameer K. Deshpande
 Maintainer: Questions and comments to <ryan.yee@wisc.edu>

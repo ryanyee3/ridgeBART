@@ -244,6 +244,7 @@ public:
   int* x0_option;
 
   // length scale parameters
+  int* dp_option;
   std::vector<std::map<double, int>> *rho_samples;
   int* rho_option; // indicates how we will choose the length scale (0 = fixed, 1 = Dirchilet Process prior)
   std::vector<double> *rho_prior;
@@ -255,6 +256,7 @@ public:
   int* activation_option;
   int intercept_option; // 0 for no intercept term, 1 for intercept term
   int* sparse_smooth; // 0 for regular smoothing, 1 for sparse smoothing
+  int* rand_rot; // 0 for not rotation, 1 for random rotation of omega
   int D; // number of bases in a single leaf
   arma::vec beta0; // prior beta mean
   arma::mat V; // prior beta covariance
@@ -289,6 +291,7 @@ public:
     phi_option = 0;
     x0_option = 0; // 0 pointer
 
+    dp_option = 0; // 0 pointer
     rho_samples = 0; // 0 pointer
     rho_option = 0; // 0 pointer
     rho_prior = 0; // 0 pointer
@@ -298,6 +301,7 @@ public:
     activation_option = 0; // 0 pointer
     intercept_option = 0;
     sparse_smooth = 0; // 0 pointer
+    rand_rot = 0; // 0 pointer
     D = 0;
     beta0 = arma::vec(D + intercept_option, arma::fill::zeros); // init prior mean with zeros
     V = arma::mat(D + intercept_option, D + intercept_option, arma::fill::eye); // init prior covariance with identity matrix

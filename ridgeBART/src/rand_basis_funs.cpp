@@ -150,6 +150,17 @@ arma::mat draw_omega(arma::vec &rho, std::set<int> &ancestors, data_info &di, tr
       if (ancestors.count(i) > 0) omega.row(i) = gen.std_norm_vec(tree_pi.D).t() / rho[i];
     }
   } else for (int i = 0; i < di.p_smooth; ++i) omega.row(i) = gen.std_norm_vec(tree_pi.D).t() / rho[i];
+  if (*tree_pi.rand_rot == 1){
+    // the option to randomly rotate omega has been chosen
+    // create q x q matrix with N(0, 1) entries
+    arma::mat M = gen.std_norm_mat(di.p_smooth, di.p_smooth);
+    // QR decomp
+    arma::mat Q(di.p_smooth, di.p_smooth);
+    arma::mat R(di.p_smooth, di.p_smooth);
+    arma::qr(Q, R, M);
+    // Q * omega -> omega ~ N(0, QVQ^T)
+    omega = Q * omega;
+  }
   return omega;
 }
 
@@ -206,7 +217,7 @@ arma::vec draw_rho(std::vector<std::map<double,int>> &sampled_rhos, int &leaf_co
   if (*tree_pi.rho_option == 0){
     // set to fixed length scale
     return *tree_pi.rho_prior;
-  } else {
+  } else if (*tree_pi.dp_option == 1){
     // draw from DP
     double output;
     arma::vec rho(di.p_smooth);
@@ -235,6 +246,22 @@ arma::vec draw_rho(std::vector<std::map<double,int>> &sampled_rhos, int &leaf_co
           }
         }
         rho[i] = output;
+      }
+    }
+    return rho;
+  } else {
+    // we will just draw rho from the prior
+    arma::vec rho(di.p_smooth);
+    for (int i = 0; i < di.p_smooth; ++i){
+      if (*tree_pi.rho_option == 1){
+          // rho option 1: F0 = Gamma(nu/2, nu*lambda/2)
+          rho[i] = gen.gamma((*tree_pi.rho_nu) / 2, (*tree_pi.rho_nu) * (*tree_pi.rho_lambda) / 2);
+      } else if (*tree_pi.rho_option == 2){
+          // rho option 2: F0 = InvGamma(nu/2, nu*lambda/2)
+          rho[i] = ((*tree_pi.rho_nu) * (*tree_pi.rho_lambda)) / gen.chi_square(*tree_pi.rho_nu);
+      } else{
+          Rcpp::Rcout << "[draw_omega]: " << '"' << *tree_pi.rho_option << '"' << " is an invalid rho_option." << std::endl;
+          Rcpp::stop("Invalid rho_option!");
       }
     }
     return rho;

@@ -22,6 +22,8 @@ Rcpp::List ridgeBART_fit(
   double lambda, double nu,
   int activation_option, int intercept_option,
   int sparse_smooth_option,
+  int rotation_option,
+  int dp_option,
   int n_bases, int rho_option, 
   Rcpp::NumericVector rho_prior,
   double rho_alpha, double rho_nu, double rho_lambda,
@@ -122,10 +124,12 @@ Rcpp::List ridgeBART_fit(
   tree_pi.var_count = &var_count;
   tree_pi.rule_count = &rule_count;
   tree_pi.x0_option = &x0_option;
+  tree_pi.dp_option = &dp_option;
   tree_pi.rho_option = &rho_option;
   tree_pi.activation_option = &activation_option;
   tree_pi.intercept_option = intercept_option;
   tree_pi.sparse_smooth = &sparse_smooth_option;
+  tree_pi.rand_rot = &rotation_option;
   
   if(p_cont > 0){
     tree_pi.unif_cuts = unif_cuts.begin(); // do we use uniform cutpoints?

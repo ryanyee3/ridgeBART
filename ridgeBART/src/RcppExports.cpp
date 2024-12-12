@@ -63,8 +63,8 @@ BEGIN_RCPP
 END_RCPP
 }
 // probit_ridgeBART_fit
-Rcpp::List probit_ridgeBART_fit(Rcpp::NumericVector Y_train, Rcpp::NumericMatrix tX_cont_train, Rcpp::IntegerMatrix tX_cat_train, Rcpp::NumericMatrix tZ_mat_train, Rcpp::NumericMatrix tX_cont_test, Rcpp::IntegerMatrix tX_cat_test, Rcpp::NumericMatrix tZ_mat_test, Rcpp::LogicalVector unif_cuts, Rcpp::Nullable<Rcpp::List> cutpoints_list, Rcpp::Nullable<Rcpp::List> cat_levels_list, Rcpp::Nullable<Rcpp::List> edge_mat_list, Rcpp::LogicalVector graph_split, int graph_cut_type, bool oblique_option, double prob_aa, int x0_option, bool sparse, double a_u, double b_u, double p_change, Rcpp::NumericVector beta0, double tau, double branch_alpha, double branch_beta, int activation_option, int intercept_option, int sparse_smooth_option, int n_bases, int rho_option, Rcpp::NumericVector rho_prior, double rho_alpha, double rho_nu, double rho_lambda, int M, int nd, int burn, int thin, bool save_samples, bool save_trees, bool verbose, int print_every);
-RcppExport SEXP _ridgeBART_probit_ridgeBART_fit(SEXP Y_trainSEXP, SEXP tX_cont_trainSEXP, SEXP tX_cat_trainSEXP, SEXP tZ_mat_trainSEXP, SEXP tX_cont_testSEXP, SEXP tX_cat_testSEXP, SEXP tZ_mat_testSEXP, SEXP unif_cutsSEXP, SEXP cutpoints_listSEXP, SEXP cat_levels_listSEXP, SEXP edge_mat_listSEXP, SEXP graph_splitSEXP, SEXP graph_cut_typeSEXP, SEXP oblique_optionSEXP, SEXP prob_aaSEXP, SEXP x0_optionSEXP, SEXP sparseSEXP, SEXP a_uSEXP, SEXP b_uSEXP, SEXP p_changeSEXP, SEXP beta0SEXP, SEXP tauSEXP, SEXP branch_alphaSEXP, SEXP branch_betaSEXP, SEXP activation_optionSEXP, SEXP intercept_optionSEXP, SEXP sparse_smooth_optionSEXP, SEXP n_basesSEXP, SEXP rho_optionSEXP, SEXP rho_priorSEXP, SEXP rho_alphaSEXP, SEXP rho_nuSEXP, SEXP rho_lambdaSEXP, SEXP MSEXP, SEXP ndSEXP, SEXP burnSEXP, SEXP thinSEXP, SEXP save_samplesSEXP, SEXP save_treesSEXP, SEXP verboseSEXP, SEXP print_everySEXP) {
+Rcpp::List probit_ridgeBART_fit(Rcpp::NumericVector Y_train, Rcpp::NumericMatrix tX_cont_train, Rcpp::IntegerMatrix tX_cat_train, Rcpp::NumericMatrix tZ_mat_train, Rcpp::NumericMatrix tX_cont_test, Rcpp::IntegerMatrix tX_cat_test, Rcpp::NumericMatrix tZ_mat_test, Rcpp::LogicalVector unif_cuts, Rcpp::Nullable<Rcpp::List> cutpoints_list, Rcpp::Nullable<Rcpp::List> cat_levels_list, Rcpp::Nullable<Rcpp::List> edge_mat_list, Rcpp::LogicalVector graph_split, int graph_cut_type, bool oblique_option, double prob_aa, int x0_option, bool sparse, double a_u, double b_u, double p_change, Rcpp::NumericVector beta0, double tau, double branch_alpha, double branch_beta, int activation_option, int intercept_option, int sparse_smooth_option, int rotation_option, int dp_option, int n_bases, int rho_option, Rcpp::NumericVector rho_prior, double rho_alpha, double rho_nu, double rho_lambda, int M, int nd, int burn, int thin, bool save_samples, bool save_trees, bool verbose, int print_every);
+RcppExport SEXP _ridgeBART_probit_ridgeBART_fit(SEXP Y_trainSEXP, SEXP tX_cont_trainSEXP, SEXP tX_cat_trainSEXP, SEXP tZ_mat_trainSEXP, SEXP tX_cont_testSEXP, SEXP tX_cat_testSEXP, SEXP tZ_mat_testSEXP, SEXP unif_cutsSEXP, SEXP cutpoints_listSEXP, SEXP cat_levels_listSEXP, SEXP edge_mat_listSEXP, SEXP graph_splitSEXP, SEXP graph_cut_typeSEXP, SEXP oblique_optionSEXP, SEXP prob_aaSEXP, SEXP x0_optionSEXP, SEXP sparseSEXP, SEXP a_uSEXP, SEXP b_uSEXP, SEXP p_changeSEXP, SEXP beta0SEXP, SEXP tauSEXP, SEXP branch_alphaSEXP, SEXP branch_betaSEXP, SEXP activation_optionSEXP, SEXP intercept_optionSEXP, SEXP sparse_smooth_optionSEXP, SEXP rotation_optionSEXP, SEXP dp_optionSEXP, SEXP n_basesSEXP, SEXP rho_optionSEXP, SEXP rho_priorSEXP, SEXP rho_alphaSEXP, SEXP rho_nuSEXP, SEXP rho_lambdaSEXP, SEXP MSEXP, SEXP ndSEXP, SEXP burnSEXP, SEXP thinSEXP, SEXP save_samplesSEXP, SEXP save_treesSEXP, SEXP verboseSEXP, SEXP print_everySEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -95,6 +95,8 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< int >::type activation_option(activation_optionSEXP);
     Rcpp::traits::input_parameter< int >::type intercept_option(intercept_optionSEXP);
     Rcpp::traits::input_parameter< int >::type sparse_smooth_option(sparse_smooth_optionSEXP);
+    Rcpp::traits::input_parameter< int >::type rotation_option(rotation_optionSEXP);
+    Rcpp::traits::input_parameter< int >::type dp_option(dp_optionSEXP);
     Rcpp::traits::input_parameter< int >::type n_bases(n_basesSEXP);
     Rcpp::traits::input_parameter< int >::type rho_option(rho_optionSEXP);
     Rcpp::traits::input_parameter< Rcpp::NumericVector >::type rho_prior(rho_priorSEXP);
@@ -109,13 +111,13 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< bool >::type save_trees(save_treesSEXP);
     Rcpp::traits::input_parameter< bool >::type verbose(verboseSEXP);
     Rcpp::traits::input_parameter< int >::type print_every(print_everySEXP);
-    rcpp_result_gen = Rcpp::wrap(probit_ridgeBART_fit(Y_train, tX_cont_train, tX_cat_train, tZ_mat_train, tX_cont_test, tX_cat_test, tZ_mat_test, unif_cuts, cutpoints_list, cat_levels_list, edge_mat_list, graph_split, graph_cut_type, oblique_option, prob_aa, x0_option, sparse, a_u, b_u, p_change, beta0, tau, branch_alpha, branch_beta, activation_option, intercept_option, sparse_smooth_option, n_bases, rho_option, rho_prior, rho_alpha, rho_nu, rho_lambda, M, nd, burn, thin, save_samples, save_trees, verbose, print_every));
+    rcpp_result_gen = Rcpp::wrap(probit_ridgeBART_fit(Y_train, tX_cont_train, tX_cat_train, tZ_mat_train, tX_cont_test, tX_cat_test, tZ_mat_test, unif_cuts, cutpoints_list, cat_levels_list, edge_mat_list, graph_split, graph_cut_type, oblique_option, prob_aa, x0_option, sparse, a_u, b_u, p_change, beta0, tau, branch_alpha, branch_beta, activation_option, intercept_option, sparse_smooth_option, rotation_option, dp_option, n_bases, rho_option, rho_prior, rho_alpha, rho_nu, rho_lambda, M, nd, burn, thin, save_samples, save_trees, verbose, print_every));
     return rcpp_result_gen;
 END_RCPP
 }
 // ridgeBART_fit
-Rcpp::List ridgeBART_fit(Rcpp::NumericVector Y_train, Rcpp::NumericMatrix tX_cont_train, Rcpp::IntegerMatrix tX_cat_train, Rcpp::NumericMatrix tZ_mat_train, Rcpp::NumericMatrix tX_cont_test, Rcpp::IntegerMatrix tX_cat_test, Rcpp::NumericMatrix tZ_mat_test, Rcpp::LogicalVector unif_cuts, Rcpp::Nullable<Rcpp::List> cutpoints_list, Rcpp::Nullable<Rcpp::List> cat_levels_list, Rcpp::Nullable<Rcpp::List> edge_mat_list, Rcpp::LogicalVector graph_split, int graph_cut_type, bool oblique_option, double prob_aa, int x0_option, bool sparse, double a_u, double b_u, double p_change, Rcpp::NumericVector beta0, double tau, double branch_alpha, double branch_beta, double sigma0, double lambda, double nu, int activation_option, int intercept_option, int sparse_smooth_option, int n_bases, int rho_option, Rcpp::NumericVector rho_prior, double rho_alpha, double rho_nu, double rho_lambda, int M, int nd, int burn, int thin, bool save_samples, bool save_trees, bool verbose, int print_every);
-RcppExport SEXP _ridgeBART_ridgeBART_fit(SEXP Y_trainSEXP, SEXP tX_cont_trainSEXP, SEXP tX_cat_trainSEXP, SEXP tZ_mat_trainSEXP, SEXP tX_cont_testSEXP, SEXP tX_cat_testSEXP, SEXP tZ_mat_testSEXP, SEXP unif_cutsSEXP, SEXP cutpoints_listSEXP, SEXP cat_levels_listSEXP, SEXP edge_mat_listSEXP, SEXP graph_splitSEXP, SEXP graph_cut_typeSEXP, SEXP oblique_optionSEXP, SEXP prob_aaSEXP, SEXP x0_optionSEXP, SEXP sparseSEXP, SEXP a_uSEXP, SEXP b_uSEXP, SEXP p_changeSEXP, SEXP beta0SEXP, SEXP tauSEXP, SEXP branch_alphaSEXP, SEXP branch_betaSEXP, SEXP sigma0SEXP, SEXP lambdaSEXP, SEXP nuSEXP, SEXP activation_optionSEXP, SEXP intercept_optionSEXP, SEXP sparse_smooth_optionSEXP, SEXP n_basesSEXP, SEXP rho_optionSEXP, SEXP rho_priorSEXP, SEXP rho_alphaSEXP, SEXP rho_nuSEXP, SEXP rho_lambdaSEXP, SEXP MSEXP, SEXP ndSEXP, SEXP burnSEXP, SEXP thinSEXP, SEXP save_samplesSEXP, SEXP save_treesSEXP, SEXP verboseSEXP, SEXP print_everySEXP) {
+Rcpp::List ridgeBART_fit(Rcpp::NumericVector Y_train, Rcpp::NumericMatrix tX_cont_train, Rcpp::IntegerMatrix tX_cat_train, Rcpp::NumericMatrix tZ_mat_train, Rcpp::NumericMatrix tX_cont_test, Rcpp::IntegerMatrix tX_cat_test, Rcpp::NumericMatrix tZ_mat_test, Rcpp::LogicalVector unif_cuts, Rcpp::Nullable<Rcpp::List> cutpoints_list, Rcpp::Nullable<Rcpp::List> cat_levels_list, Rcpp::Nullable<Rcpp::List> edge_mat_list, Rcpp::LogicalVector graph_split, int graph_cut_type, bool oblique_option, double prob_aa, int x0_option, bool sparse, double a_u, double b_u, double p_change, Rcpp::NumericVector beta0, double tau, double branch_alpha, double branch_beta, double sigma0, double lambda, double nu, int activation_option, int intercept_option, int sparse_smooth_option, int rotation_option, int dp_option, int n_bases, int rho_option, Rcpp::NumericVector rho_prior, double rho_alpha, double rho_nu, double rho_lambda, int M, int nd, int burn, int thin, bool save_samples, bool save_trees, bool verbose, int print_every);
+RcppExport SEXP _ridgeBART_ridgeBART_fit(SEXP Y_trainSEXP, SEXP tX_cont_trainSEXP, SEXP tX_cat_trainSEXP, SEXP tZ_mat_trainSEXP, SEXP tX_cont_testSEXP, SEXP tX_cat_testSEXP, SEXP tZ_mat_testSEXP, SEXP unif_cutsSEXP, SEXP cutpoints_listSEXP, SEXP cat_levels_listSEXP, SEXP edge_mat_listSEXP, SEXP graph_splitSEXP, SEXP graph_cut_typeSEXP, SEXP oblique_optionSEXP, SEXP prob_aaSEXP, SEXP x0_optionSEXP, SEXP sparseSEXP, SEXP a_uSEXP, SEXP b_uSEXP, SEXP p_changeSEXP, SEXP beta0SEXP, SEXP tauSEXP, SEXP branch_alphaSEXP, SEXP branch_betaSEXP, SEXP sigma0SEXP, SEXP lambdaSEXP, SEXP nuSEXP, SEXP activation_optionSEXP, SEXP intercept_optionSEXP, SEXP sparse_smooth_optionSEXP, SEXP rotation_optionSEXP, SEXP dp_optionSEXP, SEXP n_basesSEXP, SEXP rho_optionSEXP, SEXP rho_priorSEXP, SEXP rho_alphaSEXP, SEXP rho_nuSEXP, SEXP rho_lambdaSEXP, SEXP MSEXP, SEXP ndSEXP, SEXP burnSEXP, SEXP thinSEXP, SEXP save_samplesSEXP, SEXP save_treesSEXP, SEXP verboseSEXP, SEXP print_everySEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -149,6 +151,8 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< int >::type activation_option(activation_optionSEXP);
     Rcpp::traits::input_parameter< int >::type intercept_option(intercept_optionSEXP);
     Rcpp::traits::input_parameter< int >::type sparse_smooth_option(sparse_smooth_optionSEXP);
+    Rcpp::traits::input_parameter< int >::type rotation_option(rotation_optionSEXP);
+    Rcpp::traits::input_parameter< int >::type dp_option(dp_optionSEXP);
     Rcpp::traits::input_parameter< int >::type n_bases(n_basesSEXP);
     Rcpp::traits::input_parameter< int >::type rho_option(rho_optionSEXP);
     Rcpp::traits::input_parameter< Rcpp::NumericVector >::type rho_prior(rho_priorSEXP);
@@ -163,7 +167,7 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< bool >::type save_trees(save_treesSEXP);
     Rcpp::traits::input_parameter< bool >::type verbose(verboseSEXP);
     Rcpp::traits::input_parameter< int >::type print_every(print_everySEXP);
-    rcpp_result_gen = Rcpp::wrap(ridgeBART_fit(Y_train, tX_cont_train, tX_cat_train, tZ_mat_train, tX_cont_test, tX_cat_test, tZ_mat_test, unif_cuts, cutpoints_list, cat_levels_list, edge_mat_list, graph_split, graph_cut_type, oblique_option, prob_aa, x0_option, sparse, a_u, b_u, p_change, beta0, tau, branch_alpha, branch_beta, sigma0, lambda, nu, activation_option, intercept_option, sparse_smooth_option, n_bases, rho_option, rho_prior, rho_alpha, rho_nu, rho_lambda, M, nd, burn, thin, save_samples, save_trees, verbose, print_every));
+    rcpp_result_gen = Rcpp::wrap(ridgeBART_fit(Y_train, tX_cont_train, tX_cat_train, tZ_mat_train, tX_cont_test, tX_cat_test, tZ_mat_test, unif_cuts, cutpoints_list, cat_levels_list, edge_mat_list, graph_split, graph_cut_type, oblique_option, prob_aa, x0_option, sparse, a_u, b_u, p_change, beta0, tau, branch_alpha, branch_beta, sigma0, lambda, nu, activation_option, intercept_option, sparse_smooth_option, rotation_option, dp_option, n_bases, rho_option, rho_prior, rho_alpha, rho_nu, rho_lambda, M, nd, burn, thin, save_samples, save_trees, verbose, print_every));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -212,8 +216,8 @@ static const R_CallMethodDef CallEntries[] = {
     {"_ridgeBART_eval_bases", (DL_FUNC) &_ridgeBART_eval_bases, 7},
     {"_ridgeBART_get_bases", (DL_FUNC) &_ridgeBART_get_bases, 7},
     {"_ridgeBART_predict_ridgeBART", (DL_FUNC) &_ridgeBART_predict_ridgeBART, 7},
-    {"_ridgeBART_probit_ridgeBART_fit", (DL_FUNC) &_ridgeBART_probit_ridgeBART_fit, 41},
-    {"_ridgeBART_ridgeBART_fit", (DL_FUNC) &_ridgeBART_ridgeBART_fit, 44},
+    {"_ridgeBART_probit_ridgeBART_fit", (DL_FUNC) &_ridgeBART_probit_ridgeBART_fit, 43},
+    {"_ridgeBART_ridgeBART_fit", (DL_FUNC) &_ridgeBART_ridgeBART_fit, 46},
     {"_ridgeBART_drawEnsemble", (DL_FUNC) &_ridgeBART_drawEnsemble, 30},
     {NULL, NULL, 0}
 };
