@@ -16,7 +16,3 @@ Alternatively, you can install using `devtools::install_github()`:
 ```
 devtools::install_github(repo = "ryanyee3/ridgeBART", subdir = "ridgeBART")
 ```
-
-## Notes about the implementation
-
-This package was adapted from the `flexBART` package.
