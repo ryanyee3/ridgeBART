@@ -1,5 +1,9 @@
 # ridgeBART
 
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/ryanyee3/ridgeBART/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ryanyee3/ridgeBART/actions/workflows/R-CMD-check.yaml)
+<!-- badges: end -->
+
 ## Motivation
 The **ridgeBART** package is a computationally efficient alternative to treed Gaussian process models.
 

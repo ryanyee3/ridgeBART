@@ -96,17 +96,17 @@
   n_test <- 100
 
   set.seed(99)
-  X_train = runif(n_train, min = -1, max = 1)
+  X_train = matrix(runif(n_train, min = -1, max = 1), ncol = 1)
   mu_train = rep(NA, times = n_train)
-  for (i in 1:n_train) mu_train[i] = target(X_train[i])
+  for (i in 1:n_train) mu_train[i] = target(X_train[i,1])
   Y_train = mu_train + rnorm(n_train, mean = 0, sd = sigma)
 
-  X_test = seq(-1, 1, length.out = n_test)
+  X_test = matrix(seq(-1, 1, length.out = n_test), ncol = 1)
   mu_test = rep(NA, times = n_test)
-  for (i in 1:n_test) mu_test[i] = target(X_test[i])
+  for (i in 1:n_test) mu_test[i] = target(X_test[i,1])
   Y_test = mu_test + rnorm(n_test, mean = 0, sd = sigma)
 
-  \dontrun{
+# Token run to ensure installation works
     fit = ridgeBART(
       Y_train = Y_train,
       X_cont_train = X_train,
@@ -114,8 +114,16 @@
       X_cont_test = X_test,
       Z_mat_test = X_test,
       save_samples = FALSE, save_trees = FALSE,
-      nd = 100, burn = 100
-    )
+      nd = 5, burn = 5)
+\donttest{
+  fit <- 
+    ridgeBART(Y_train = Y_train,
+      X_cont_train = X_train,
+      Z_mat_train = X_train,
+      X_cont_test = X_test,
+      Z_mat_test = X_test,
+      save_samples = FALSE, save_trees = FALSE,
+      nd = 100, burn = 100)
 
     par(mar = c(3,3,2,1), mgp = c(1.8, 0.5, 0), mfrow = c(1,2))
     plot(mu_train, fit$yhat.train.mean, pch = 16, cex = 0.5, 

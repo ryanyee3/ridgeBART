@@ -1,0 +1,7 @@
+.DS_Store
+*.o
+src/*.o
+*.tar.gz
+ridgeBART.Rcheck/*
+*.Rhistory
+
