@@ -1,6 +1,6 @@
 Package: ridgeBART
 Type: Package
-Title: Bayeisan Additive Regression Trees with Ridge Function Outputs
+Title: Bayesian Additive Regression Trees with Ridge Function Outputs
 Version: 1.0.0
 Date: 2026-05-15
 Authors@R: c(
