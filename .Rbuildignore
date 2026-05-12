@@ -1,7 +1,7 @@
 ^paper_examples/*$
 ^\.github$
-^\README\.md$
-^\tutorial\.md$
+^README\.md$
+^tutorial\.md$
 ^ridgeBART*\.tar\.gz$
 ^LICENSE$
 ^ridgeBART\.Rcheck/*$
