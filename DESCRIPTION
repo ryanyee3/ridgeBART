@@ -6,7 +6,13 @@ Date: 2026-05-12
 Authors@R: c(
   person(given = "Ryan", family = "Yee", role = c("aut"), email = "ryee2@wisc.edu", comment = c(ORCID = "0009-0005-5691-4009")),
   person(given = "Sameer K.", family = "Deshpande", role = c("aut", "cre"), email = "sameer.deshpande@wisc.edu", comment = c(ORCID = "0000-0003-4116-5533")))
-Description: Implements an extension of Bayesian Additive Regression Trees (BART) in which each regression tree outputs a linear combination of random ridge functions (i.e., a composition of a non-linear function like cosine or tanh or the rectified linear unit with an affine transformation) instead of a constant. Can be used to perform "targetted smoothing" in which trees split on certain covariates but output smooth functions in other covariates. For more information, see Yee, Ghosh, and Deshpande (2026+) <doi:10.48550/arXiv.2411.07984>.
+Description: Implements an extension of Bayesian Additive Regression Trees (BART) 
+    in which each regression tree outputs a linear combination of random ridge functions 
+    (i.e., a composition of a non-linear function like cosine or tanh or the rectified linear 
+    unit with an affine transformation) instead of a constant. 
+    Can be used to perform "targetted smoothing" in which trees split on certain covariates 
+    but output smooth functions in other covariates. For more information, see i
+    Yee, Ghosh, and Deshpande (2026+) <doi:10.48550/arXiv.2411.07984>.
 License: GPL (>= 3)
 LinkingTo: Rcpp, RcppArmadillo
 Imports: Rcpp

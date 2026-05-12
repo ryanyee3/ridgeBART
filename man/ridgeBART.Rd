@@ -76,12 +76,6 @@ These ridge functions are a composition between an affine transformation and a u
 \seealso{
   \code{\link{probit_ridgeBART}} for binary outcomes.
 }
-%\references{
-%  Put arXiv reference here.
-%}
-\author{
-  Ryan Yee
-}
 \examples{
   target = function(x){
     if (x <= -0.5) return(-2 * x)
@@ -105,15 +99,16 @@ These ridge functions are a composition between an affine transformation and a u
   for (i in 1:n_test) mu_test[i] = target(X_test[i,1])
   Y_test = mu_test + rnorm(n_test, mean = 0, sd = sigma)
 
-# Token run to ensure installation works
-    fit = ridgeBART(
-      Y_train = Y_train,
-      X_cont_train = X_train,
-      Z_mat_train = X_train,
-      X_cont_test = X_test,
-      Z_mat_test = X_test,
-      save_samples = FALSE, save_trees = FALSE,
-      nd = 5, burn = 5)
+## Token run to ensure installation works
+    fit <- 
+      ridgeBART(
+        Y_train = Y_train,
+        X_cont_train = X_train,
+        Z_mat_train = X_train,
+        X_cont_test = X_test,
+        Z_mat_test = X_test,
+        save_samples = FALSE, save_trees = FALSE,
+        nd = 5, burn = 5)
 \donttest{
   fit <- 
     ridgeBART(Y_train = Y_train,
@@ -138,6 +133,5 @@ Chipman, H, George, E.I., and McCulloch, R. (2008) BART: Bayesian Additive Regre
 \emph{Annals of Applied Statistics}. \bold{4}(1):266--298. \doi{10.1214/09-AOAS285}.
 
 Yee, R., Ghosh, S, and Deshpande, S.K. (2026+). Scalable piecewise smoothing with BART. 
-arXiv preprint arXiv:2411.07984. \doi{10.48550/arXiv.2411.07984}.
-
+\emph{arXiv preprint} arXiv:2411.07984. \doi{10.48550/arXiv.2411.07984}.
 }
