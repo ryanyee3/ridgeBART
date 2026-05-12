@@ -2,11 +2,14 @@
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/ryanyee3/ridgeBART/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ryanyee3/ridgeBART/actions/workflows/R-CMD-check.yaml)
+[![CRAN status](https://www.r-pkg.org/badges/version/flexBART)](https://CRAN.R-project.org/package=flexBART)
 <!-- badges: end -->
 
 ## Motivation
 The **ridgeBART** package is a computationally efficient alternative to treed Gaussian process models.
 
+
+<!--
 ## Installation and basic usage
 
 The package source files are contained in the sub-directory `ridgeBART`.
@@ -20,3 +23,4 @@ Alternatively, you can install using `devtools::install_github()`:
 ```
 devtools::install_github(repo = "ryanyee3/ridgeBART", subdir = "ridgeBART")
 ```
+-->
