@@ -72,28 +72,8 @@ As such, for each x, the induced prior for P(Y = 1 | x) places 95\% probability 
 \seealso{
   \code{\link{ridgeBART}} for continuous outcomes.
 }
-%\references{
-%  Put arXiv reference here.
-%}
-\author{
-  Ryan Yee
+\references{
+Albert, J.H. and Chib, S. (1993). Bayesian analysis of binary and polychotomous response data.
+\emph{Journal of the American Statistical Association}. \bold{88}(422):669--679.
+\doi{10.1080/01621459.1993.10476321}.
 }
-%\examples{
-%##---- Should be DIRECTLY executable !! ----
-%##-- ==>  Define data, use random,
-%##--	or do  help(data=index)  for the standard data sets.
-%
-%## The function is currently defined as
-%function (x) 
-%{
-%  }
-%}
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory (show via RShowDoc("KEYWORDS")):
-% \keyword{ ~kwd1 }
-% \keyword{ ~kwd2 }
-% Use only one keyword per line.
-% For non-standard keywords, use \concept instead of \keyword:
-% \concept{ ~cpt1 }
-% \concept{ ~cpt2 }
-% Use only one concept per line.

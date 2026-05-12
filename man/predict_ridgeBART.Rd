@@ -27,6 +27,3 @@
   A matrix containing posterior samples of the regression function evaluated at the supplied inputs.
   The rows of the matrix correspond to MCMC iterations and the columns correspond to the observations in the supplied data (i.e. rows of \code{X_cont}, \code{X_cat} and/or \code{Z_mat}).
 }
-\author{
-  Ryan Yee
-}
