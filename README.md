@@ -2,7 +2,7 @@
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/ryanyee3/ridgeBART/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ryanyee3/ridgeBART/actions/workflows/R-CMD-check.yaml)
-[![CRAN status](https://www.r-pkg.org/badges/version/flexBART)](https://CRAN.R-project.org/package=ridgeBART)
+[![CRAN status](https://www.r-pkg.org/badges/version/ridgeBART)](https://CRAN.R-project.org/package=ridgeBART)
 <!-- badges: end -->
 
 ## Motivation
