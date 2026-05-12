@@ -4,9 +4,8 @@
   BART with ridge function outputs.
 }
 \description{
-  Implements Chipman et al. (2010)'s Bayesian additive regression trees (BART) method for nonparametric regression with continuous outcomes. 
-  The regression function is represented as a sum of binary regression trees.
-  Ridge functions with a user-specified activation are used as the output function for leaf nodes.
+Implements an extension of Bayesian Additive Regression Trees (BART; Chipman et al. 2010) that replaces constant leaf node outputs with linear combinations of ridge functions.
+These ridge functions are a composition between an affine transformation and a user-specified non-linear activation function (e.g., cosine, hyperbolic tangent, logistic, or ReLU).
 }
 \usage{
   ridgeBART(
@@ -133,4 +132,12 @@
         xlab = "Truth", ylab = "Estimate", main = "Testing")
     abline(a = 0, b = 1, col = 'blue')
   }
+}
+\references{
+Chipman, H, George, E.I., and McCulloch, R. (2008) BART: Bayesian Additive Regression Trees. 
+\emph{Annals of Applied Statistics}. \bold{4}(1):266--298. \doi{10.1214/09-AOAS285}.
+
+Yee, R., Ghosh, S, and Deshpande, S.K. (2026+). Scalable piecewise smoothing with BART. 
+arXiv preprint arXiv:2411.07984. \doi{10.48550/arXiv.2411.07984}.
+
 }
