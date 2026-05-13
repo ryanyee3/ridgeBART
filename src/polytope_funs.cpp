@@ -32,12 +32,12 @@ void calc_proj(std::vector<double> &x0, std::map<int, double> &phi, double &c){
     x0[it->first] += k * (it->second);
   }
   phi_x = calc_phi_x(phi,x0);
-  if( abs(c - phi_x ) > 1e-12 ){
+  if( std::abs(c - phi_x ) > 1e-12 ){
     Rcpp::Rcout << " x0 is now :";
     for(std::vector<double>::iterator it = x0.begin(); it != x0.end(); ++it) Rcpp::Rcout << " " << *it;
     Rcpp::Rcout << std::endl;
     Rcpp::Rcout << " phi'x0 = " << phi_x << " c = " << c << std::endl;
-    Rcpp::Rcout << abs(c - phi_x) << std::endl;
+    Rcpp::Rcout << std::abs(c - phi_x) << std::endl;
     Rcpp::stop("[calc_proj]: abs( c - phi'x0 ) > 1e-16. Mistake in calculating the projection");
   }
 }
@@ -834,7 +834,7 @@ void calc_analytic_center(std::vector<double> &x0_vec, std::vector<std::map<int,
   }
   
   for(std::vector<double>::iterator it = x0_vec.begin(); it != x0_vec.end(); ++it){
-    if(abs(*it) < 1e-9) *it = 0.0;
+    if(std::abs(*it) < 1e-9) *it = 0.0;
   }
   
 }
