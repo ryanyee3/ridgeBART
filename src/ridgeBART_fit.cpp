@@ -286,7 +286,7 @@ Rcpp::List ridgeBART_fit(
   std::vector<std::vector<arma::vec>> b_log_vec(M);
   std::vector<std::vector<std::map<int,arma::vec>>> beta_log_vec(M);
 
-  Rcpp::Rcout << "Starting MCMC Loop" << std::endl;
+  //Rcpp::Rcout << "Starting MCMC Loop" << std::endl;
   
   // main MCMC loop starts here
   for(int iter = 0; iter < total_draws; iter++){
@@ -433,7 +433,7 @@ Rcpp::List ridgeBART_fit(
     } // closes if that checks whether we should save anything in this iteration
   } // closes the main MCMC for loop
 
-  Rcpp::Rcout << "The MCMC loop has ended" << std::endl;
+  //Rcpp::Rcout << "The MCMC loop has ended" << std::endl;
 
   fit_train_mean /= ( (double) nd);
   if(n_test > 0) fit_test_mean /= ( (double) nd);

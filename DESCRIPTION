@@ -2,7 +2,7 @@ Package: ridgeBART
 Type: Package
 Title: Bayesian Additive Regression Trees with Ridge Function Outputs
 Version: 1.0.0
-Date: 2026-05-12
+Date: 2026-05-13
 Authors@R: c(
   person(given = "Ryan", family = "Yee", role = c("aut"), email = "ryee2@wisc.edu", comment = c(ORCID = "0009-0005-5691-4009")),
   person(given = "Sameer K.", family = "Deshpande", role = c("aut", "cre"), email = "sameer.deshpande@wisc.edu", comment = c(ORCID = "0000-0003-4116-5533")))
