@@ -13,6 +13,7 @@ Description: Implements an extension of Bayesian Additive Regression Trees (BART
     Can be used to perform "targeted smoothing" in which trees split on certain covariates 
     but output smooth functions in other covariates. For more information, see
     Yee, Ghosh, and Deshpande (2026+) <doi:10.48550/arXiv.2411.07984>.
+URL: https://github.com/ryanyee3/ridgeBART
 License: GPL (>= 3)
 LinkingTo: Rcpp, RcppArmadillo
 Imports: Rcpp

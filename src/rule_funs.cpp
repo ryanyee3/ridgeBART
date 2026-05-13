@@ -178,7 +178,7 @@ void draw_cont_rule(rule_t &rule, tree &t, int &nid, data_info &di, tree_prior_i
   //     arma::uvec new_phi_support = find(arma::abs(new_phi) > 1e-9); // find the non-zero elements
   //     if(new_phi_support.n_elem == 1) new_phi(new_phi_support(0)) = 1.0;
   //     for(int j = 0; j < di.p_cont; ++j){
-  //       if(abs(new_phi(j)) > 1e-9) rule.phi.insert(std::pair<int,double>(j, new_phi(j))); // tolerance is 1e-9 for 0. this may be too permissive, but 1e-16 might be too strict
+  //       if(std::abs(new_phi(j)) > 1e-9) rule.phi.insert(std::pair<int,double>(j, new_phi(j))); // tolerance is 1e-9 for 0. this may be too permissive, but 1e-16 might be too strict
   //     }
   //     rule.normalize_phi(); // normalize phi
   //   } else if(tree_pi.phi_option == 4){
